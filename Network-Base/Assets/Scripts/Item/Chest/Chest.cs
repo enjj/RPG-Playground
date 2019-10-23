@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Chest : Interactable {
+
+    public Action onTakeDamage;
+    public Action onOpened;
 
     [Header("Initializations")]
     [SerializeField]
@@ -138,6 +140,8 @@ public class Chest : Interactable {
         _animator.SetTrigger(OPEN);
 
         _hasOpened = true;
+
+        onOpened?.Invoke();
     }
 
     private void TakeDamage() {
@@ -146,7 +150,8 @@ public class Chest : Interactable {
         }
 
         DecreaseCurrentHealth(_lastInteractedCharacterStats.GetAttackDamage());
-        
+        onTakeDamage?.Invoke();
+
         if (IsDead && !_hasOpened) {
             Open();
         } else {
