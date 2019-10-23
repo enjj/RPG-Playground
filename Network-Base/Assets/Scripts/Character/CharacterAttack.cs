@@ -32,6 +32,10 @@ public class CharacterAttack : MonoBehaviour {
         Collider[] colliders = Physics.OverlapSphere(_hitCollider.transform.position, _hitCollider.radius, _attackableLayerMask);
 
         foreach (Collider collider in colliders) {
+            Interactable interactedObject = collider.GetComponent<Interactable>();
+            if (interactedObject != null) {
+                interactedObject.OnInteracted();
+            }
         }
     }
 
