@@ -35,6 +35,10 @@ public class CharacterStats : MonoBehaviour
         _character.AttackRange += amount;
     }
 
+    public void IncreaseAttackDamage(float amount) {
+        _character.AttackDamage += amount;
+    }
+
     #endregion
 
     #region Decreasers
@@ -61,6 +65,14 @@ public class CharacterStats : MonoBehaviour
         _character.AttackRange -= amount;
     }
 
+    public void DecreaseAttackDamage(float amount) {
+        if (_character.AttackDamage - amount < 0) {
+            return;
+        }
+
+        _character.AttackDamage -= amount;
+    }
+
     #endregion
 
     #region Setters
@@ -77,6 +89,10 @@ public class CharacterStats : MonoBehaviour
         _character.AttackRange = value;
     }
 
+    public void SetAttackDamage(float value) {
+        _character.AttackDamage = value;
+    }
+
     #endregion
 
     #region Reporters
@@ -91,6 +107,10 @@ public class CharacterStats : MonoBehaviour
 
     public float GetAttackRange() {
         return _character.AttackRange;
+    }
+
+    public float GetAttackDamage() {
+        return _character.AttackDamage;
     }
 
     #endregion

@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5227839274258338250
 Transform:
@@ -94,7 +94,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5227839274258338252
 Transform:
@@ -173,7 +173,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5227839274258338254
 Transform:
@@ -216,7 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddc1914593923a4d97127b4d231aaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Chest
+  _itemDefinition_Template: {fileID: 11400000, guid: e7012ba498e78f04588e8a1a61026a49,
+    type: 2}
+  _item: {fileID: 0}
 --- !u!95 &3242204550161203007
 Animator:
   serializedVersion: 3

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8270e0ecfcdc314cafc53cab28656e5, type: 3}
-  m_Name: CharacterStats
+  m_Script: {fileID: 11500000, guid: c1092034d107e154d8a1b0f03dccef2d, type: 3}
+  m_Name: Chest
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
-  _rotationSpeed: 280
-  _attackRange: 0.6
-  _attackDamage: 25
+  _ID: 0
+  _name: Chest
+  _prefab: {fileID: 5227839274258697710, guid: 9436212e74b4c6a4481e36b3414b90c1, type: 3}
+  _currentHealth: 100
+  _maxHealth: 100

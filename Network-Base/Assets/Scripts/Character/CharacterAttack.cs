@@ -12,7 +12,7 @@ public class CharacterAttack : MonoBehaviour {
     [SerializeField]
     private SphereCollider _hitCollider = null;
     [SerializeField]
-    private LayerMask _attackableLayerMask;
+    private LayerMask _attackableLayerMask = 0;
 
     private CharacterStats _characterStats;
 
@@ -34,7 +34,7 @@ public class CharacterAttack : MonoBehaviour {
         foreach (Collider collider in colliders) {
             Interactable interactedObject = collider.GetComponent<Interactable>();
             if (interactedObject != null) {
-                interactedObject.OnInteracted();
+                interactedObject.OnInteracted(_characterStats);
             }
         }
     }
