@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5227839274258697706}
-  m_LocalRotation: {x: -0.7625555, y: 0, z: -0, w: 0.6469228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0.52242064, z: -0.3601229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -166,6 +166,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5227839274258338254}
   - component: {fileID: 5276872632705930567}
+  - component: {fileID: 285054501}
+  - component: {fileID: 3242204550161203007}
   m_Layer: 9
   m_Name: Chest
   m_TagString: Untagged
@@ -202,3 +204,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &285054501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227839274258697710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddc1914593923a4d97127b4d231aaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Chest
+--- !u!95 &3242204550161203007
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227839274258697710}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8119152069e8b444185d783828d389f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
