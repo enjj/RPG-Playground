@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(CharacterStats))]
+[RequireComponent(typeof(Rigidbody), typeof(CharacterStats), typeof(CharacterAttack))]
 public class CharacterMotor : MonoBehaviour {
 
     public Action onMove;
@@ -11,6 +11,7 @@ public class CharacterMotor : MonoBehaviour {
 
     private Rigidbody _rb = null;
     private CharacterStats _characterStats = null;
+    private CharacterAttack _characterAttack = null;
 
     public float CurrentVelocity { 
         get {
@@ -21,6 +22,7 @@ public class CharacterMotor : MonoBehaviour {
     private void Awake() {
         _rb = GetComponent<Rigidbody>();
         _characterStats = GetComponent<CharacterStats>();
+        _characterAttack = GetComponent<CharacterAttack>();
     }
 
     public void Move(float vertical) {
@@ -37,6 +39,10 @@ public class CharacterMotor : MonoBehaviour {
         _rb.velocity = Vector3.zero;
 
         onStop?.Invoke();
+    }
+
+    public void Attack() {
+        _characterAttack.Attack();
     }
 
 }

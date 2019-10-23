@@ -7,6 +7,8 @@ public class CharacterStats_SO : ScriptableObject {
     private float _movementSpeed = 1f;
     [SerializeField]
     private float _rotationSpeed = 350f;
+    [SerializeField]
+    private float _attackRange = 0.6f;
 
     public float MovementSpeed {
         get { return _movementSpeed; }
@@ -15,6 +17,10 @@ public class CharacterStats_SO : ScriptableObject {
     public float RotationSpeed {
         get { return _rotationSpeed; }
         set { _rotationSpeed = value; }
+    }
+    public float AttackRange {
+        get { return _attackRange; }
+        set { _attackRange = value; }
     }
 
 }

@@ -9,14 +9,18 @@ public class CharacterAnimator : MonoBehaviour {
     [SerializeField]
     private Animator _animator = null;
     private CharacterMotor _characterMotor = null;
+    private CharacterAttack _characterAttack = null;
 
     private const string VELOCITY = "Velocity";
+    private const string ATTACK = "Attack";
 
     private void Awake() {
         _characterMotor = GetComponent<CharacterMotor>();
+        _characterAttack = GetComponent<CharacterAttack>();
 
         _characterMotor.onMove += OnMove;
         _characterMotor.onStop += OnStop;
+        _characterAttack.onAttack += OnAttack;
     }
 
     public void OnMove() {
@@ -25,6 +29,10 @@ public class CharacterAnimator : MonoBehaviour {
 
     public void OnStop() {
         _animator.SetFloat(VELOCITY, 0);
+    }
+
+    public void OnAttack() {
+        _animator.SetTrigger(ATTACK);
     }
 
 }

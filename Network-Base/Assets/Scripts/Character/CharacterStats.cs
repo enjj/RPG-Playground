@@ -31,6 +31,10 @@ public class CharacterStats : MonoBehaviour
         _character.RotationSpeed += amount;
     }
 
+    public void IncreaseAttackRange(float amount) {
+        _character.AttackRange += amount;
+    }
+
     #endregion
 
     #region Decreasers
@@ -49,6 +53,14 @@ public class CharacterStats : MonoBehaviour
         _character.RotationSpeed -= amount;
     }
 
+    public void DecreaseAttackRange(float amount) {
+        if (_character.AttackRange - amount < 0) {
+            return;
+        }
+
+        _character.AttackRange -= amount;
+    }
+
     #endregion
 
     #region Setters
@@ -61,6 +73,10 @@ public class CharacterStats : MonoBehaviour
         _character.RotationSpeed = value;
     }
 
+    public void SetAttackRange(float value) {
+        _character.AttackRange = value;
+    }
+
     #endregion
 
     #region Reporters
@@ -71,6 +87,10 @@ public class CharacterStats : MonoBehaviour
 
     public float GetRotationSpeed() {
         return _character.RotationSpeed;
+    }
+
+    public float GetAttackRange() {
+        return _character.AttackRange;
     }
 
     #endregion

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterMotor))]
+[RequireComponent(typeof(CharacterMotor), typeof(CharacterAttack))]
 public class PlayerController : MonoBehaviour {
 
     private CharacterMotor _characterMotor = null;
@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
         } else {
             Stop();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Attack();
+        }
     }
 
     private void Move() {
@@ -40,6 +44,10 @@ public class PlayerController : MonoBehaviour {
 
     private void Stop() {
         _characterMotor.Stop();
+    }
+
+    private void Attack() {
+        _characterMotor.Attack();
     }
 
 }
